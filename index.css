@@ -115,13 +115,13 @@ section{
     cursor: pointer;
     padding: 1rem 3rem;
     border: var(--border-light);
-    color: white;
+    color: var(--black);
     font-size: 2rem;
 }
 
 
 .btn:hover{
-background-color: var(--white);
+background-color: transparent;
 color: var(--orange);
 }
 

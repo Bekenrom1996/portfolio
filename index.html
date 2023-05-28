@@ -1,38 +1,3 @@
-<?php
-
-$conn = mysqli_connect('localhost','root', '', 'content') or die('connection failed');
-
-
-
-if(isset($_POST['send'])){
-
-    $name = mysqli_real_escape_string($conn, $_POST['name']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $number = mysqli_real_escape_string($conn, $_POST['number']);
-    $message = mysqli_real_escape_string($conn, $_POST['message']);
-    
-$select_message = mysqli_query($conn, "SELECT * FROM `content_form` WHERE name='$name' AND email='$email' AND number='$number' AND message='$message'") or die('query failed');
-
-
-if(mysqli_num_rows($select_message) > 0){
-
-    $message['message'] = 'message sent already!';
-}else{
-mysqli_query($conn, "INSERT INTO `content_form`(name, email, number, message) VALUES 
-('$name', '$email', '$number', '$message')") or die('query failed');
-
-}
-}
-
-?> 
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,26 +15,15 @@ mysqli_query($conn, "INSERT INTO `content_form`(name, email, number, message) VA
     
 
 
-<?php
 
-
-
-if(isset($$message)){
-
-foreach($$message as $$message){
-  echo ' 
   <div class="message" data-aos="zoom-out">
 
-<span>'. $message.'</span>
+<span></span>
 <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
 
 </div>
   
-  ';
-}
-
-}
-?>
+  
 
 
 <header class="header">
@@ -134,7 +88,13 @@ foreach($$message as $$message){
 
     <h3 data-aos="fade-up">hi i am kayode boluwatife</h3>
     <span data-aos="fade-up">web designer & developer</span>
-    <p data-aos="fade-up">i design and develop experience that make people <b>simple</b></p>
+    <p data-aos="fade-up">        
+
+    I’m a full-stack developer specializing in building (and occasionally
+    designing) exceptional digital experiences. Currently, I’m <b style="color: rgb(224, 224, 10);">Focused</b> on
+     building responsive full-stack web applications.
+
+    </p>
     <a data-aos="fade-up" href="#about" class="btn">about me</a>
 </div>
 
@@ -166,7 +126,7 @@ foreach($$message as $$message){
 
     <h3 data-aos="fade-zoom-in"><span>name : </span>Kayode boluwatife</h3>
     <h3 data-aos="fade-zoom-in"><span>email : </span>Kayodeboluwatife112@gmail.com</h3>
-    <h3 data-aos="fade-zoom-in"><span>address : </span>UK london</h3>
+    <h3 data-aos="fade-zoom-in"><span>address : </span>Lagos, Nigeria</h3>
     <h3 data-aos="fade-zoom-in"><span>Phone : </span>09011052986, 07069241668</h3>
     <h3 data-aos="fade-zoom-in"><span>age: </span>26</h3>
     <h3 data-aos="fade-zoom-in"><span>experience : </span>2+ years</h3>
@@ -195,6 +155,7 @@ foreach($$message as $$message){
 <div class="bar" data-aos="fade-right" ><h3><span>PHP</span>70%</h3></div>
 <div class="bar" data-aos="fade-right" ><h3><span>MYSQL</span><span>60%</h3></div>
 <div class="bar" data-aos="fade-right" ><h3><span>REACT</span><span>60%</h3></div>
+    <div class="bar" data-aos="fade-right" ><h3><span>Next.js</span>70%</h3></div>
 
 
 </div>
@@ -218,7 +179,7 @@ foreach($$message as $$message){
 <div class="box" data-aos="fade-right">
 
     <span>(2013-2015)</span>
-    <h3>Buainess Administration</h3>
+    <h3>Business Administration</h3>
     <p>Studied at Adegbenro polythecnic</p>
     
     </div>
@@ -240,16 +201,14 @@ foreach($$message as $$message){
             <div class="box" data-aos="fade-left">
             
             <span>(2021-2022)</span>
-            <h3>Web Development</h3>
-            <p>studied at national institue of technology(NIIT)</p>
+            <h3>work as an IT officer</h3>
+            <p>@arab technologies industries</p>
             
             </div>
             
             <div class="box" data-aos="fade-left">
-            
-                <span>(2021-2022)</span>
-                <h3>SSCE</h3>
-                <p>studied at king emmanuel college</p>
+               <h3>worked with a group of team</h3>
+                <p>in building a chatbot and other websites</p>
                 
                 </div>
             
@@ -364,34 +323,34 @@ foreach($$message as $$message){
 <div class="box-container">
 
 <div class="box" data-aos="zoom-in">
-<img src="computer.png" alt="">
-<h3>web developement</h3>
+<img src="realestate.jpg" alt="">
+<h3>E-commerce</h3>
 <span>(2020-2022)</span>
 </div>
 
 
 <div class="box" data-aos="zoom-in">
-    <img src="kat" alt="">
-    <h3>web developement</h3>
+    <img src="workImg.jpeg" alt="">
+    <h3>landing page</h3>
     <span>(2020-2022)</span>
     </div>
 
     <div class="box" data-aos="zoom-in">
-        <img src="biz.png" alt="">
-        <h3>web developement</h3>
+        <img src="realestate.jpg" alt="">
+        <h3>Real Estate website</h3>
         <span>(2020-2022)</span>
         </div>
 
 
         <div class="box"  data-aos="zoom-in">
-            <img src="home.png" alt="">
-            <h3>web developement</h3>
+            <img src="travel.jpg" alt="">
+            <h3>Travelling website</h3>
             <span>(2020-2022)</span>
             </div>
 
             <div class="box" data-aos="zoom-in">
-                <img src="biz.png" alt="">
-                <h3>web developement</h3>
+                <img src="agency.jpg" alt="">
+                <h3>Authority websites</h3>
                 <span>(2020-2022)</span>
                 </div>
 
